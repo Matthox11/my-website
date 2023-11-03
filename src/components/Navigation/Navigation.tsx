@@ -1,21 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+
+import NavigationButton from './NavigationButton/NavigationButton';
+import NavigationLink from './NavigationLink/NavigationLink';
 
 import './Navigation.css'
 
-function Navigation() {
+function Navigation({ links }: any) {
+
+    const [is_hidden, set_hidden] = useState(true);
+
+    function handle_click() {
+
+        set_hidden(!is_hidden);
+    }
 
     return (
 
         <div className="navigation">
 
-            <Link className='navigation--link' to="/">Home</Link>
+            <NavigationButton color={is_hidden ? 'var(--night)' : 'var(--white)'} change_state={handle_click} />
 
-            <Link className='navigation--link' to="/projects">Projects</Link>
+            <div className={`navigation--menu ${is_hidden ? 'navigation--menu-hidden' : ''}`}>
 
-            <Link className='navigation--link' to="/about">About</Link>
+                {links.map((link: any, index: number) => (
 
-            <Link className='navigation--link' to="/contact">Contact</Link>
+                    <NavigationLink label={link.label} path={link.path} change_state={handle_click} />
+                ))}
+            </div>
         </div>
     );
 }

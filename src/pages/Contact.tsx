@@ -1,4 +1,5 @@
 import React from 'react';
+import Navigation from '../components/Navigation/Navigation';
 
 function Contact() {
 
@@ -6,7 +7,7 @@ function Contact() {
 
         <div>
 
-            <h1>Contact Page</h1>
+            <h1>Contact</h1>
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Navigation from '../components/Navigation/Navigation';
 
 function About() {
 
@@ -6,7 +7,7 @@ function About() {
 
         <div>
 
-            <h1 className='title'>About Page</h1>
+            <h1>About</h1>
         </div>
     );
 }

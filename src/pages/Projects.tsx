@@ -1,4 +1,5 @@
 import React from 'react';
+import Navigation from '../components/Navigation/Navigation';
 
 function Projects() {
 
@@ -6,7 +7,7 @@ function Projects() {
 
         <div>
 
-            <h1>Projects Page</h1>
+            <h1>Projects</h1>
         </div>
     );
 }

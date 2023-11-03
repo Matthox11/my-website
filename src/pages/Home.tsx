@@ -1,4 +1,5 @@
 import React from 'react';
+import Navigation from '../components/Navigation/Navigation';
 
 function Home() {
 
@@ -6,6 +7,7 @@ function Home() {
 
         <div>
 
+            <h1>Home</h1>
         </div>
     );
 }

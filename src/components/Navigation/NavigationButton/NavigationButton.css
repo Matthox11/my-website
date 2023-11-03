@@ -1,0 +1,11 @@
+.navigation-button {
+
+    padding: 2rem;
+
+    z-index: 1;
+}
+
+.navigation-button--icon {
+
+    cursor: pointer;
+}

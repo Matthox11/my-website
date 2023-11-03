@@ -1,13 +1,47 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
 import Navigation from './components/Navigation/Navigation';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import About from './pages/About';
+import Contact from './pages/Contact';
+
+interface Link {
+
+	label: string;
+	path: string;
+	component: JSX.Element;
+}
 
 function App() {
+
+	const links: Link[] = [
+
+		{
+			label: 'Home',
+			path: '/',
+			component: <Home />
+		},
+
+		{
+			label: 'Projects',
+			path: '/projects',
+			component: <Projects />
+		},
+
+		{
+			label: 'About',
+			path: '/about',
+			component: <About />
+		},
+
+		{
+			label: 'Contact',
+			path: '/contact',
+			component: <Contact />
+		}
+	];
 
 	return (
 
@@ -15,17 +49,15 @@ function App() {
 
 			<Router>
 
-				<Navigation />
+				<Navigation links={links} />
 
 				<Routes>
 
-					<Route path="/" element={<Home />} />
+					{links.map((link: Link, item: number) => (
 
-					<Route path="/projects" element={<Projects />} />
+						<Route path={link.path} element={link.component} />
+					))}
 
-					<Route path="/about" element={<About />} />
-
-					<Route path="/contact" element={<Contact />} />
 				</Routes>
 			</Router>
 

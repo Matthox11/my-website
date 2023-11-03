@@ -1,0 +1,15 @@
+.navigation-link {
+
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation-link--link {
+
+    font-family: 'Cinzel';
+    text-decoration: none;
+    color: var(--white);
+}
